@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+
+@media(max-width: 1199px){
+    header .wrap{width: 90%;}
+    section .wrap{width: 90%;}
+    #about .wrap .txt_part{
+        justify-content: space-between;
+    }
+    #about .wrap .txt_part .txt{
+        width: 50%;
+    }    
+    #contact .wrap .myLink h2{
+        font-size: 32px;
+    }
+}
+@media(max-width: 991px){}

@@ -1,0 +1,394 @@
+@charset "utf-8";
+
+body.active{
+    overflow-y: hidden;
+}
+
+section{
+    padding: 100px 0 60px;
+    color: #333;
+}
+section .wrap{
+    width: 1240px;
+    margin: 0 auto;
+}
+section .wrap > h3{
+    font-size: 32px;
+    padding-bottom: 30px;
+}
+
+
+/* ----------- about ----------- */
+#about{}
+#about .wrap{
+}
+#about .wrap h3{
+    font-size: 56px;
+    text-align: center;
+}
+#about .wrap .txt_part{
+    padding: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#about .wrap .txt{
+    width: 60%;
+}
+#about .wrap .txt p{}
+#about .wrap .img{
+    width: 40%;
+    height: 400px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url(../img/img4.jpeg);
+}
+
+
+
+/* ----------- skill ----------- */
+#skill{
+
+}
+#skill .wrap{
+    
+}
+#skill .wrap > h3{
+    font-size: 32px;
+    text-align: center;
+}
+#skill .wrap .graph{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+#skill .wrap .graph .box{
+    width: calc(100% / 4 - 20px);
+    margin: 0 10px;
+}
+#skill .wrap .graph .box .skill_icon{
+    padding-bottom: 10px;
+}
+#skill .wrap .graph .box .skill_icon img{
+    display: block;
+    margin: 0 auto;
+}
+#skill .wrap .graph .box .cont{
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    transform: translateX(20px);
+    /* background-color: #fff; */
+    position: relative;
+}
+#skill .wrap .graph .box .cont svg{
+    width: 240px;
+    height: 240px;
+    z-index: 9;
+}
+#skill .wrap .graph .box .cont svg circle{   
+    transform: translate(-20px, -20px); 
+    fill: none;
+    stroke: #0785a14b;
+    stroke-width: 14px;
+}
+#skill .wrap .graph .box .cont .txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#skill .wrap .graph .box .cont .txt h3{
+    font-size: 24px;
+    line-height: 36px;
+}
+#skill .wrap .graph .box .cont .txt h3 > span{}
+
+
+#skill .wrap .graph .box .cont svg circle:nth-child(2){
+    stroke-linecap: round;
+    stroke-dasharray: 628; /*2*3.14*100 = 628*/
+    stroke-dashoffset: 628;
+    stroke: #02343F;
+    transition: stroke-dashoffset 2s linear;
+} 
+
+
+/* ----------- portfolio ----------- */
+#portfolio{
+    position: relative;
+}
+#portfolio h3{
+    font-size: 56px;
+    text-align: center;
+}
+#portfolio .wrap{
+    width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: #faf9f8;
+}
+#portfolio .wrap article{
+    height: 90vh;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#portfolio .wrap article:nth-child(even){
+    /* flex-direction: row-reverse; */
+}
+#portfolio .wrap article > div{
+    /* width: calc(50% - 30px); */
+        
+}
+#portfolio .wrap article .left_part{
+    width: calc(60% - 40px);
+    height: 500px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+#portfolio .wrap article .left_part .siteImg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 0%;
+    background-image: url(../img/portfolio/p_cont1.png);
+    transition: background-position 3s;
+}
+#portfolio .wrap article:nth-child(3) .left_part .siteImg{
+    background-size: 100% 100%;
+}
+
+#portfolio .wrap article .left_part:hover .siteImg{
+    background-position: 50% 100%;
+}
+
+#portfolio .wrap article .right_part{
+    width: 40%;
+    padding: 10px 0;
+}
+#portfolio .wrap article .right_part h2{
+    font-size: 32px;
+    line-height: 1.6;
+    padding-bottom: 20px;
+
+}
+#portfolio .wrap article .right_part p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+#portfolio .wrap article .right_part .buttons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+#portfolio .wrap article .right_part .buttons a{
+    display: block;
+    width: calc(50% - 10px);
+    height: 40px;
+    border: 2px solid #333;
+    color: #333;
+    font-size: 16px;
+    line-height: 36px;
+    text-align: center;
+}
+
+#portfolio .wrap article .dark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    opacity: 0;
+}
+#portfolio .wrap article .dark.active{
+    z-index: 5;
+    opacity: 1;
+}
+#portfolio .wrap article .codePop{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 85vh;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 5;
+    padding: 40px;
+    z-index: -1;
+    opacity: 0;
+}
+#portfolio .wrap article .codePop.active{
+    z-index: 5;
+    opacity: 1;
+}
+#portfolio .wrap article .codePop .close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+#portfolio .wrap article .codePop .close span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-image: url(../img/cancel.png);
+    cursor: pointer;
+}
+#portfolio .wrap article .codePop ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+#portfolio .wrap article .codePop ul li{
+    display: flex;
+    height: 100%;
+    
+}
+#portfolio .wrap article .codePop ul li > div{
+    width: 50%;
+    height: 100%;
+}
+#portfolio .wrap article .codePop ul li .codeImg{
+    background-color: #ffa;
+}
+#portfolio .wrap article .codePop ul li .codeTxt{
+    background-color: #aaf;
+}
+#portfolio .wrap article .codePop ul li .codeTxt p{}
+
+
+#contact{}
+#contact .wrap{
+    position: relative;
+}
+#contact .wrap .mail{
+    width: 100%;
+    height: 400px;
+}
+#contact .wrap fieldset{
+    border: none;
+    background-color: #F0EDCC;
+    /* border-radius: 10px 0 10px 0; */
+    margin: 0;
+    height: 400px;
+    position: relative;
+}
+
+#contact .wrap fieldset h4{
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+#contact .wrap fieldset .formlist{
+    width: 100%;
+    padding: 0 20px;
+}
+#contact .wrap fieldset .formlist ul{
+    padding-bottom: 10px;
+}
+#contact .wrap fieldset .formlist ul li{
+    display: flex;
+    padding: 10px 0;
+}
+#contact .wrap fieldset .formlist ul li label{
+    display: block;
+    width: 100px;
+    word-break: keep-all;
+    line-height: 40px;
+    font-size: 14px;
+}
+#contact .wrap fieldset .formlist ul li .inputBox{
+    display: block;
+    width: calc(100% - 100px);
+}
+#contact .wrap fieldset .formlist ul li .inputBox input{
+    display: block;
+    width: 100%;
+    border: none;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+}
+#contact .wrap fieldset .formlist ul li .inputBox textarea{
+    display: block;
+    width: 100%;
+    height: 140px;
+    border: none;
+    padding: 15px 10px;
+    resize: none;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-y: scroll;
+    outline: none;
+}
+
+
+#contact .wrap fieldset .formlist .btn_area{}
+#contact .wrap fieldset .formlist .btn_area button{
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px 0 10px 0;
+    background-color: #fff;
+    cursor: pointer;
+}
+#contact .wrap fieldset .formlist .btn_area button:hover{
+    background-color: #02343F;
+    color: #fff;
+}
+
+#contact .wrap .thnx_msg{}
+#contact .wrap .thnx_msg article{
+    position: absolute;
+    max-width: 500px;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.3);
+}
+#contact .wrap .thnx_msg article h3{
+    font-size: 16px; 
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+section .wrap .box4 .thnx_msg article p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+#contact .wrap .thnx_msg article .close_btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+#contact .wrap .thnx_msg article .close_btn  a{}
+#contact .wrap .thnx_msg article .close_btn  a img{
+    display: block;
+    height: 14px;
+}
+
+#contact .wrap .sticker{
+    position: absolute;
+    top: 0px;
+    left: -30px;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+#contact .wrap .sticker img{
+    display: block;
+    width: 120px;
+    height: 40px;
+}
